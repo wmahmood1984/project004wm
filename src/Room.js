@@ -6,32 +6,41 @@ import './Room.css';
 
 function Room() {
     let [isLIt, setLIt] = useState(false);
-    let [age, setAge] = useState(35)
+    let [temp, setTemp] = useState(72)
 
-    function updateclick(){
-        console.log("button clicked")
-        setLIt(!isLIt);
+    function OnButton(){
+        console.log("On button clicked")
+        setLIt(true);
         
     }
-    function incAge(){
-        console.log("age button clicked")
-        
-        setAge(++age)
-    }
 
+    function OffButton(){
+        console.log("off button clicked")
+        setLIt(false);
+        
+    }    
+    function incTemp(){
+        console.log("inc Temp button clicked")
+        
+        setTemp(++temp)
+    }
+    function decTemp(){
+        console.log("dec Temp button clicked")
+        
+        setTemp(--temp)
+    }
                      
   return (           
     <div className={`room ${isLIt? "lit": "dark"}`}> This Room is  {isLIt? "lit": "dark"}
+    <br/>The temp of this room is {temp}
     <br/>
-    age = {age}
+    <button onClick={OnButton}>Toggle Light On</button>
     <br/>
-    <button onClick={updateclick}>Toggle Light</button>
+    <button onClick={OffButton}>Toggle Light Off</button>
     <br/>
-    <button onClick={() =>  {
-        console.log("age button clicked")
-        
-        setAge(++age)
-    }}>inc age</button>
+    <button onClick={incTemp}>Increase Temp</button>
+    <br/>
+    <button onClick={decTemp}>Decrease Temp</button>
     </div>
   );
 }
