@@ -40,4 +40,4 @@ jobs:
     
     # Deploy Surge
     - name: Deploy React App to Surge
-      run: surge ./build project004wm.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+      run: surge ./build ReactRoomwm.surge.sh --token ${{ secrets.SURGE_TOKEN }}
